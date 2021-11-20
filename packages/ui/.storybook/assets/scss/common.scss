@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+* {
+  box-sizing:border-box;
+  font-family: 'Roboto', 'Sans-serif';
+  @include custom-scroll;
+}
+
+html, body {
+  font-size:10px;
+  overflow:hidden;
+}
+
+button {
+  cursor:pointer;
+}
+
+h1 {
+  @include set-font(1.75rem, 700, $font-color, normal);
+}
+
+h2 {
+  @include set-font(1.6rem, 700, $font-color, normal);
+}
+
+.flex {
+  &.flex-start {
+    @include set-flex(row, flex-start, center);
+  }
+  &.flex-end {
+    @include set-flex(row, flex-end, center);
+  }
+  &.flex-center {
+    @include set-flex(row, center, center);
+  }
+  &.space-between {
+    @include set-flex(row, space-between, center);
+  }
+}

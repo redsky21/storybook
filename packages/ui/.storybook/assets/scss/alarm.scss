@@ -1,0 +1,62 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+.alarm-container {
+  display:none;
+  z-index:21;
+  position:absolute;
+  top:calc(100% + 0.8rem);
+  right:-3rem;
+  width:20rem;
+  background-color:#fff;
+  border-radius:2rem;
+  border:1px solid #e5e5e5;
+  box-shadow: 0px 20px 50px 0 rgba(0, 0, 0, 0.05);
+  &.active {
+    display:block;
+  }
+  .alarm-box {
+    padding:3rem;
+
+    .alarm-lists {
+      .alarm-list {
+        position:relative;
+        @include set-flex(row, space-between, center);
+        margin:1.7rem 0 0;
+        padding:1.7rem 0 0;
+        border-top:1px solid #e5e5e5;
+        &:first-child {
+          margin-top:0;
+          padding-top:0;
+          border-top:0;
+        }
+
+        &.new {
+          &:before {
+            content:'';
+            position:absolute;
+            top:50%;
+            left:-1.8rem;
+            transform:translateY(-50%);
+            display:block;
+            width:0.8rem;
+            height:0.8rem;
+            background-color:#f29da0;
+            border-radius:100%;
+          }
+        }
+
+        > div {
+          @include set-font(1.4rem, 400, #000, normal);
+          &.data {
+            font-weight:700;
+          }
+        }
+      }
+    }
+  }
+}

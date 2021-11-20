@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+.footer-container {
+  z-index:22;
+  position:relative;
+  border-top:1px solid #e5e5e5;
+  background-color:#fff;
+  .footer-box {
+    .footer-lists {
+      @include set-flex(row, flex-start, center);
+      .footer-list {
+        position:relative;
+        @include set-flex(row, flex-start, center);
+        flex:1;
+        height:4rem;
+        padding:0 1.8rem;
+        &:before {
+          content:'';
+          position:absolute;
+          top:50%;
+          left:0;
+          transform:translateY(-50%);
+          display:block;
+          width:1px;
+          height:3rem;
+          background-color:#e5e5e5;
+        }
+
+        .select-box {
+          &.css-1nrlq1o-MuiFormControl-root {
+            > label {
+              max-width:calc(100% - 1.3rem);
+            }
+            &:after {
+              width:0.8rem;
+              height:0.6rem;
+              background:asset-image('ic_arrow_10.png') no-repeat center / 0.8rem 0.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

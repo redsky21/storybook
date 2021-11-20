@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+.card-transaction {
+  .field-type-datepicker {
+    &.field-date-of-use {
+      input {
+        width:18rem;
+      }
+    }
+  }
+  
+  
+  .reson-for-application {
+    margin-bottom:5rem;
+    
+    .field-container {
+      .field-box {
+        .field-reason-for-application {
+          @include set-flex(row, flex-start, center);
+
+          label {
+            @include set-font(1.6rem, bold, $font-color, normal);
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+/* input 기본 스타일 초기화 */
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+    -webkit-border-radius:0;     
+}
+
+/* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
+input::-ms-clear { display: none; }
+
+/* input type number 에서 화살표 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Select box 스타일 초기화 */ 
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* IE 에서 Select box 화살표 제거 */ 
+select::-ms-expand { display: none; }
+
+.field {
+  &:first-child {
+    margin-top:0;
+  }
+
+  label {
+    margin-right:1rem;
+  }
+}
+
+.button-container {
+  button {
+    @include set-font(1.4rem, normal, $font-color, normal);
+    min-width: 8.7rem;
+    margin: 0 .5rem;
+
+    &:first-child {
+      margin-left:0;
+    }
+
+    &:last-child {
+      margin-right:0;
+    }
+  }
+}

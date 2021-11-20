@@ -1,0 +1,99 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+.card-information {
+  .announce-container {
+    position:relative;
+    max-width: 128rem;
+    padding:1.5rem 2rem;
+    border:1px solid rgba(0,0,0,0.1);
+    background-color:#fbfbfb;
+    .announce-box {
+      .btn-close {
+        position:absolute;
+        top:1.7rem;
+        right:3rem;
+        width:1.5rem;
+        height:1.5rem;
+        background:asset-image('ic_close.png') no-repeat center / 1.5rem;
+      }
+      .announce-content {
+        .message {
+          @include set-font(1.6rem, 400, #191919, normal);
+        }
+      }
+  
+      .announce-footer {
+        @include set-flex(row, space-between, center);
+        margin-top:1rem;
+        .number {
+          @include set-font(1.6rem, 400, rgba(25, 25, 25, 0.8), normal);
+        }
+      }
+    }
+  }
+  
+  .app-information-container {
+    margin-top:4rem;
+    margin-bottom:5rem;
+    .app-information-box {
+      .app-information-content {
+        max-width:128rem;
+        margin-top:3.2rem;
+
+        .information-box {
+          margin-top:4rem;
+          &:first-child {
+            margin-top:0;
+          }
+          .information-row {
+            @include set-flex(row, space-between, center);
+            padding:1.6rem 1.5rem;
+            border-bottom:1px solid rgba(0,0,0,0.1);
+            &:first-child {
+              border-top:1px solid rgba(0,0,0,0.9);
+            }
+
+            &:last-child {
+              border-bottom:1px solid rgba(0,0,0,0.9);
+            }
+            .information {
+              @include set-flex(row, space-between, center);
+              width:50%;
+              &:nth-child(1) {
+                padding-right:12.3rem;
+              }
+              &:nth-child(2) {
+                padding-left:12.3rem;
+              }
+              .label {
+                @include set-font(1.6rem, 400, #191919, normal);
+              }
+              .data {
+                @include set-font(1.6rem, 500, rgba(0, 0, 0, 0.9), normal);
+                .MuiFormGroup-root {
+                  @include set-flex(row, flex-start, center);
+                  .MuiFormControlLabel-root {
+                    margin-left:1rem;
+                    &:first-child {
+                      margin-left:0;
+                    }
+                  }
+                }
+                .MuiInputBase-root {
+                  .MuiInputBase-input {
+                    text-align:right;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

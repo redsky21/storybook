@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "generate-app": "cd packages/core && node generate",
+    "init-app": "yarn && lerna clean --yes && lerna bootstrap",
+    "sb": "cd packages/ui && yarn storybook",
+    "storybook": "cd packages/ui && yarn storybook"
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
+  }
+}

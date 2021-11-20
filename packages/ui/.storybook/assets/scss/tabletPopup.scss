@@ -1,0 +1,98 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+.popup {
+  &.popup-iwms {
+    z-index:99;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    .popup-container {
+      height:100%;
+      padding:0 6rem;
+      .popup-box {
+        position:relative;
+        @include set-flex(row, center, center);
+        height:100%;
+        .btn-popup-close {
+          position:absolute;
+          top:8rem;
+          right:6rem;
+          width:3.2rem;
+          height:3.3rem;
+          background:asset-image('icon_close.png') no-repeat center / 3.2rem 3.3rem;
+        }
+
+        .popup-content {
+          width:100%;
+          .search-detail-container {
+            .search-detail-box {
+              .box-header {
+                padding:3rem 2rem;
+                background-color:#fbfbfb;
+                border:1px solid rgba(0, 0, 0, 0.1);
+                .field-type-radio {
+                  .MuiFormGroup-root {
+                    @include set-flex(row, flex-start, center);
+                    label {
+                      margin-left:5rem;
+                      &:first-child {
+                        margin-left:0;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .box-content {
+                max-height:135rem;
+                overflow-y:auto;
+                .row {
+                  @include set-flex(row, space-between, center);
+                  padding:4rem 0 3rem 2.2rem;
+                  border-bottom:1px solid rgba(0, 0, 0, 0.1);
+                  .label {
+                    @include set-font(2.85rem, 400, rgba(0, 0, 0, 0.9), normal);
+                    letter-spacing:-0.071rem;
+                  }
+
+                  .field-container {
+                    .field-type-datepicker {
+                      input {
+                        width:26.5rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .popup-button-container {
+              margin-top:8.4rem;
+              text-align:center;
+              button {
+                margin:0 0.5rem;
+                &.btn-reset {
+                  &:before {
+                    content:'';
+                    display:block;
+                    width:2.9rem;
+                    height:2.3rem;
+                    margin-right:1.2rem;
+                    background:asset-image('ic_reload.png') no-repeat center / 2.9rem 2.3rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

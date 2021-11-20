@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+@import 'layout', 'abstracts/variables', 'abstracts/functions', 'abstracts/mixins';
+// FULL HEIGHT
+.default-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .search-form-container {
+  }
+  .grid-container {
+    flex: 1;
+    .grid-box {
+      height: 100%;
+      .grid {
+        height: 100%;
+      }
+    }
+  }
+}
+
+// SELECT STYLE
+.select-cell {
+}
+
+// BUTTON STYLE
+.btn-grid-link {
+  color: #0065d5;
+  text-decoration: underline;
+
+  &:active,
+  &:hover {
+    color: #f24851;
+  }
+}
+.btn-setup-save {
+  min-width: 48px;
+  padding: 0 1rem !important;
+  text-align: center;
+  > div {
+    flex: 1;
+    justify-content: center;
+  }
+}

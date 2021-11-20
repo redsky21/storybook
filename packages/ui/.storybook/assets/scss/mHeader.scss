@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+.mobile-header-container {
+  padding:0 6.5rem;
+  border-bottom:1px solid rgba(0,0,0,0.1);
+  .mobile-header-box {
+    @include set-flex(row, flex-start, center);
+    height:11.8rem;
+    .left-side {
+      @include set-flex(row, flex-start, center);
+
+      .hamburger-menu {
+        .btn-menu {
+          display:block;
+          width:4rem;
+          height:3.3rem;
+          background:asset-image('icon_menu.png') no-repeat center / 4rem 3.3rem;
+        }
+      }
+
+      .page-title-container {
+        margin-left:3rem;
+        .page-title-box {
+          .title {
+            font-size:4rem;
+          }
+        }
+      }
+    }
+  }
+}

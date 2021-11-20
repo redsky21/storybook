@@ -1,0 +1,51 @@
+@charset 'UTF-8';
+
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+.mobile-footer-container {
+  border-top-left-radius:6.4rem;
+  border-top-right-radius:6.4rem;
+  background-color: #edf0f2;
+  .mobile-footer-box {
+    .user-menu {
+      height:12.9rem;
+      @include set-flex(row, center, center);
+      .menu-list {
+        .btn-icon {
+          display:block;
+          &.btn-notice {
+            width:3.5rem;
+            height:4rem;
+            background:asset-image('ic_notice.png') no-repeat center / 3.5rem 4rem;
+          }
+          &.btn-favorite {
+            width:4.3rem;
+            height:4rem;
+            margin-left:17.4rem;
+            background:asset-image('ic_favorite.png') no-repeat center / 4.3rem 4rem;
+          }
+          &.btn-profile {
+            overflow:hidden;
+            position:relative;
+            width:5.9rem;
+            height:5.9rem;
+            margin-left:15.1rem;
+            border-radius:100%;
+            img {
+              position:absolute;
+              top:50%;
+              left:50%;
+              transform:translate(-50%, -50%);
+              display:block;
+              width:100%;
+              height:auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
